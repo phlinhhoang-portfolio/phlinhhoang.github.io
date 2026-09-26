@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Linh Hoang — Communications professional with expertise in strategic communications, brand governance, and bilingual content.">
+<meta property="og:title" content="Linh Hoang — Portfolio">
+<meta property="og:description" content="Selected communications work by Linh Hoang.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linh Hoang — Portfolio">
+<title>Linh Hoang — Portfolio</title>
+</head>
+<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+
+/* ── Reset & Base ─────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --text:    #191919;
+  --text-2:  #37352F;
+  --text-3:  #787774;
+  --text-4:  #6B6A68;
+  --bg:      #FFFFFF;
+  --callout: #F7F6F3;
+  --border:  #E9E9E7;
+  --border-s:#CBCAC8;
+  --font:    'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+h2, h3 { margin: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; border-radius: 2px; }
+
+/* ── Layout ───────────────────────────── */
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ── Header ───────────────────────────── */
+.page-title {
+  font-size: clamp(52px, 10vw, 96px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 56px 0 0;
+  color: var(--text);
+}
+
+.page-subtitle {
+  font-size: 18px;
+  color: var(--text-3);
+  margin: 14px 0 0;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: start;
+  margin-top: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.intro-text h2 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.intro-text p {
+  font-size: 15px;
+  color: var(--text-3);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.intro-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.intro-badge {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+  background: var(--callout);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 10px;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  border: 1.5px solid var(--border-s);
+  border-radius: 6px;
+  padding: 8px 16px;
+  transition: border-color .15s, background .15s;
+}
+.cta-link { text-decoration: none; cursor: pointer; }
+.cta-link:hover { background: var(--callout); border-color: var(--text-4); }
+
+.intro-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  background: transparent;
+}
+
+/* ── Section headers ──────────────────── */
+.section-block {
+  margin-top: 48px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.section-desc {
+  font-size: 14px;
+  color: var(--text-3);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 680px;
+}
+
+/* ── Project cards ────────────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card {
+  padding: 20px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+/* Remove right border for every second card (right column) */
+.card:nth-child(2n) { border-right: none; }
+/* Remove bottom border for last two cards */
+.card:nth-last-child(-n+2) { border-bottom: none; }
+/* If odd total, last card (in first column) also no bottom border */
+.card:last-child:nth-child(odd) { border-bottom: none; }
+
+.card-label {
+  font-size: 11px;
+  color: var(--text-4);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-4);
+  background: var(--callout);
+  border-radius: 3px;
+  padding: 2px 7px;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-4);
+  border-bottom: 1px solid var(--border-s);
+  padding-bottom: 1px;
+}
+.card-link:hover { color: var(--text-2); border-color: var(--border-s); }
+
+.card-img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+}
+
+.card-img-label {
+  font-size: 11px;
+  color: var(--text-4);
+  margin-bottom: 10px;
+}
+
+/* ── Pull quote ───────────────────────── */
+.pull-quote {
+  background: var(--callout);
+  border-left: 3px solid var(--border-s);
+  border-radius: 0 4px 4px 0;
+  padding: 12px 14px;
+  margin: 10px 0 12px;
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.6;
+  font-style: italic;
+}
+.pull-quote .attr {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--text-4);
+  margin-top: 6px;
+}
+
+/* ── Stats ────────────────────────────── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 10px 0 12px;
+}
+.stat-box {
+  padding: 12px 10px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.stat-box:last-child { border-right: none; }
+.stat-num { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+.stat-label { font-size: 11px; color: var(--text-4); line-height: 1.4; margin-top: 3px; }
+
+/* ── Social preview (card section 4) ─── */
+.social-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.stab {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 3px;
+  color: #fff;
+}
+.stab-li { background: #0a66c2; }
+.stab-fb { background: #1265d4; }
+.stab-tw { background: #0f1419; }
+
+.social-col {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.social-hdr {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--callout);
+}
+.social-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-3);
+}
+.social-name { font-size: 13px; font-weight: 600; }
+.social-sub { font-size: 11px; color: var(--text-4); }
+.social-body { padding: 12px; font-size: 13px; line-height: 1.6; color: var(--text-2); }
+
+/* ── Skills table ─────────────────────── */
+.skills-table {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+.skills-table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  background: var(--callout);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.skills-table td {
+  vertical-align: top;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.7;
+  border-bottom: 1px solid var(--border);
+}
+.skills-table tr:last-child td { border-bottom: none; }
+.skills-table td:first-child {
+  font-weight: 600;
+  color: var(--text-2);
+  white-space: nowrap;
+  width: 220px;
+  border-right: 1px solid var(--border);
+}
+
+/* ── Work Together ────────────────────── */
+.contact-block {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-block h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.contact-block p {
+  font-size: 15px;
+  color: var(--text-3);
+  margin-bottom: 24px;
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1.5px solid var(--border-s);
+  border-radius: 6px;
+  color: var(--text);
+}
+.contact-link:hover { background: var(--callout); }
+
+/* ── About / Career grid ──────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.about-col {
+  padding: 24px;
+}
+.about-col:first-child { border-right: 1px solid var(--border); }
+.about-col h3 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 10px;
+}
+.about-col p {
+  font-size: 14px;
+  color: var(--text-3);
+  line-height: 1.7;
+}
+
+/* ── Responsive ───────────────────────── */
+@media (max-width: 620px) {
+  .page { padding: 0 16px 60px; }
+  .page-title { margin-top: 40px; }
+  .page-subtitle {
+  font-size: 18px;
+  color: var(--text-3);
+  margin: 14px 0 0;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+.intro-grid { grid-template-columns: 1fr; gap: 24px; }
+  .intro-avatar { display: none; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .card:nth-child(2n) { border-right: none; }
+  .card { border-right: none; }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .stat-box:nth-child(2) { border-right: none; }
+  .stat-box:nth-child(3) { border-right: 1px solid var(--border); }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  .skills-table td:first-child { width: auto; white-space: normal; }
+}
+</style>
+
+<main id="main-content">
+<div class="page">
+
+  <!-- ── Page title ──────────────────── -->
+  <h1 class="page-title">Linh Hoang</h1>
+  <p class="page-subtitle">Content strategy and writing for complex, human-centred work</p>
+
+  <!-- ── Intro ───────────────────────── -->
+  <div class="intro-grid">
+    <div class="intro-text">
+      <p>I turn complex public-interest work into clear campaigns, editorial programs, and stakeholder communications — produced for government-funded institutions and bilingual audiences across Canada and Southeast Asia.</p>
+      <div class="intro-meta">
+        <span class="intro-badge">Marketing Content Lead</span>
+        <span class="intro-badge">Brand Storyteller</span>
+        <span class="intro-badge">EN · VI</span>
+        <span class="intro-badge">Ho Chi Minh City, Vietnam</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:4px;">
+        <a href="mailto:phlinh.hoang@gmail.com" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--text-2);text-decoration:none;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          phlinh.hoang@gmail.com
+        </a>
+        <a href="tel:+84832571468" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--text-2);text-decoration:none;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          083-257-1468
+        </a>
+      </div>
+    </div>
+    <img class="intro-avatar" src="../images/avatar.png" alt="Linh Hoang — illustrated portrait" />
+  </div>
+
+  <!-- ── About ────────────────────────── -->
+  <section class="section-block" aria-labelledby="background-heading">
+    <h2 class="section-label" id="background-heading">Background</h2>
+    <div class="about-grid">
+      <div class="about-col">
+        <h3>About this portfolio</h3>
+        <p>This collection showcases English content produced at the Atlas Institute for Veterans and Families (Canada), where I led all digital communications from 2021 to 2024 — web copy, campaigns, editorial newsletters, social media, and stakeholder reporting. The work was produced for a national audience on emotionally complex public health topics, requiring the same audience intelligence and tonal precision that drives engagement in any high-stakes content context.</p>
+      </div>
+      <div class="about-col">
+        <h3>Career highlights</h3>
+        <p>Following my B.A. in Communications at RMIT Vietnam, I joined Indochine Media Ventures, writing bilingual content across Robb Report Vietnam and Barcode Vietnam. I then moved to Canada to complete a journalism diploma at SAIT, which led to a Communications Coordinator role at CMHA Calgary and then a marketing position at Anderson Vacations. I spent the following three years as Social &amp; Digital Engagement Lead at the Atlas Institute — a national research and knowledge mobilization centre funded by Veterans Affairs Canada — and currently support them as a full-time communications contractor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Work samples ──────────────────── -->
+  <section class="section-block" aria-labelledby="projects-heading">
+    <p class="section-label" aria-hidden="true">Work Samples</p>
+    <h2 class="section-title" id="projects-heading">Projects</h2>
+    <p class="section-desc">Eight selected samples across campaign, editorial, social, video, reporting, and strategy — produced for a national public-health research institution. The first three samples include live links to the published work; all samples include production context and editorial decisions.</p>
+
+    <div class="cards-grid">
+
+      <!-- Card 1: Changemakers Newsletter -->
+      <div class="card">
+        <div class="card-label">Quarterly stakeholder newsletter · 2021–2022</div>
+        <h3 class="card-title">Changemakers — Three-issue editorial run</h3>
+        <div style="display:flex;gap:6px;margin-bottom:10px;">
+          <img style="width:50%;border-radius:4px;border:1px solid var(--border);display:block;object-fit:cover;" src="../images/changemakers-1.jpg" alt="Changemakers newsletter — Issue 1 feature spread" loading="lazy">
+          <img style="width:50%;border-radius:4px;border:1px solid var(--border);display:block;object-fit:cover;" src="../images/changemakers-2.jpg" alt="Changemakers newsletter — Issue 1 interior pages" loading="lazy">
+        </div>
+        <p class="card-img-label">↑ Changemakers newsletter spreads — Issue 1, September 2021 (Atlas Institute)</p>
+        <p class="card-desc">As editorial lead, I conceived the calendar, sourced and coordinated content from researchers and program teams, wrote and edited all submissions for voice consistency, and managed production from first draft through bilingual publication.</p>
+        <div class="stat-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+          <div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Issues as editorial lead</div></div>
+          <div class="stat-box"><div class="stat-num">8–12</div><div class="stat-label">Content sections per issue</div></div>
+          <div class="stat-box"><div class="stat-num">87%</div><div class="stat-label">Readership</div></div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Newsletter Strategy</span>
+          <span class="tag">Editorial Direction</span>
+          <span class="tag">Contributor Management</span>
+          <span class="tag">Content Calendar Planning</span>
+          <span class="tag">Copyediting</span>
+          <span class="tag">Voice Governance</span>
+          <span class="tag">Performance Reporting</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Impact Report Video -->
+      <div class="card">
+        <img src="../images/impact-report-thumb.jpg" alt="Atlas Institute Impact Report 2025-26 video end card" style="width:100%;border-radius:8px;margin-bottom:14px;display:block;">
+        <div class="card-label">Video content &amp; script · 2025–2026</div>
+        <h3 class="card-title">Atlas Institute Impact Report 2025–26 — Video</h3>
+        <p class="card-desc">Produced the video content for the Atlas Institute's 2025–26 Impact Report as part of ongoing contractor work. The piece distills a year of organizational milestones — research findings, program outcomes, and community impact — into a format accessible to a national Veteran and stakeholder audience.</p>
+        <div class="card-tags">
+          <span class="tag">Video Script</span>
+          <span class="tag">Impact Reporting</span>
+          <span class="tag">Stakeholder Communications</span>
+          <span class="tag">Contractor Deliverable</span>
+        </div>
+        <a class="card-link" href="https://atlasveterans.ca/impact-reports/impact-report-2025-26/" target="_blank" rel="noopener">View Impact Report 2025–26 ↗<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+
+      <!-- Card 3: Brand Governance -->
+      <div class="card" style="grid-column:1/-1;">
+        <div class="card-label">Internal policy &amp; strategy frameworks</div>
+        <h3 class="card-title">Brand governance &amp; content strategy</h3>
+        <p class="card-desc">At the Atlas Institute I developed and owned the social media policy from scratch — covering employee conduct, visitor interaction rules, copyright compliance, and a structured PR crisis response matrix. Governance responsibilities also included applying and contributing to the Style Guide (v3, June 2023), producing the Digital Strategy Report (April–June 2023), and briefing, directing, and evaluating external agency deliverables.</p>
+        <div class="card-tags">
+          <span class="tag">Social Media Policy</span>
+          <span class="tag">Crisis Communications</span>
+          <span class="tag">Style Guide</span>
+          <span class="tag">Digital Strategy</span>
+          <span class="tag">Agency Briefing</span>
+        </div>
+      </div>
+
+    </div><!-- /cards-grid -->
+  </section><!-- /section:projects -->
+
+  <!-- ── Skills ────────────────────────── -->
+  <section class="section-block" aria-labelledby="skills-heading">
+    <p class="section-label" aria-hidden="true">Capabilities</p>
+    <h2 class="section-title" id="skills-heading">Skills</h2>
+    <table class="skills-table">
+      <thead>
+        <tr>
+          <th scope="col">Category</th>
+          <th scope="col">Skills &amp; tools</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Writing &amp; Editing</td>
+          <td>Web copy · Email campaigns · Video scripts · Executive speeches · Press releases · Newsletter editorial · Social media copy (all platforms) · Research communications · Resource hub content · Policy writing</td>
+        </tr>
+        <tr>
+          <td>Campaign &amp; Strategy</td>
+          <td>Campaign concepting · Content calendar development · A/B testing (headlines, hooks, visuals) · Channel-native adaptation · Agency briefing &amp; evaluation · Analytics reporting · Digital strategy</td>
+        </tr>
+        <tr>
+          <td>Languages</td>
+          <td>English (native-level; journalism-trained) · Vietnamese (native)</td>
+        </tr>
+        <tr>
+          <td>Tools &amp; Platforms</td>
+          <td>Adobe Creative Cloud · Canva · Meta Business Suite · Notion · Sprout Social · WordPress / CMS · Social analytics dashboards</td>
+        </tr>
+      </tbody>
+    </table>
+  </section><!-- /section:skills -->
+
+  <!-- ── More work ────────────────────── -->
+  <section class="section-block" aria-labelledby="more-work-heading">
+    <div style="padding:16px 0 8px;border-top:1px solid var(--border);margin-top:0;">
+      <h2 class="section-label" id="more-work-heading">More work</h2>
+    </div>
+    <div class="cards-grid">
+
+      <!-- Card 4b: Veteran Family Virtual Summit -->
+      <div class="card">
+        <img style="width:100%;border-radius:6px;border:1px solid var(--border);display:block;margin-bottom:10px;object-fit:cover;" src="../images/summit-hero.jpg" alt="Veteran Family Virtual Summit 2024 — title slide" loading="lazy">
+        <div class="card-label">Communications lead · 2023 &amp; 2024</div>
+        <h3 class="card-title">Veteran Family Virtual Summit 2023 + 2024</h3>
+        <p class="card-desc">Across two consecutive years, I served as Communications Lead for Content at the Atlas Institute's national virtual summit for Veteran families. The role spanned the full content pipeline — I planned and wrote social media campaigns before and after each event, produced web and email copy, scripted and coordinated editorial video, and developed ad creative that ran across paid channels. <a href="https://atlasveterans.ca/community/events/family-summit-2024/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">View the 2024 summit ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
+        <div class="pull-quote">
+          <p>"Veteran Families have unique experiences and needs that are often unheard and unaddressed. To start a discussion about these needs, the Atlas Institute hosted the Veteran Family Summit… The high level of interest and positive feedback from our audience underscores the need for more information and discussion about the mental health and well-being of Veteran Families."</p>
+          <div class="attr">— Opening paragraph, Veteran Family Summit Summary Report</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-box"><div class="stat-num">442</div><div class="stat-label">Registrants across Canada and internationally</div></div>
+          <div class="stat-box"><div class="stat-num">11</div><div class="stat-label">Provinces + territories represented</div></div>
+          <div class="stat-box"><div class="stat-num">92%</div><div class="stat-label">Said it improved their understanding</div></div>
+          <div class="stat-box"><div class="stat-num">96%</div><div class="stat-label">Want to learn more</div></div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Social Campaign</span>
+          <span class="tag">Web Copy</span>
+          <span class="tag">Email Marketing</span>
+          <span class="tag">Video Scripting</span>
+          <span class="tag">Paid Digital</span>
+          <span class="tag">Event Reporting</span>
+        </div>
+      </div>
+<!-- Card 4: Month of Military Child -->
+      <div class="card">
+        <div class="card-label">Web copy · social · email · video script · April 2023</div>
+        <h3 class="card-title">Month of the Military Child 2023 — campaign</h3>
+        <img src="../images/military-child-hero.jpg" alt="Month of the Military Child 2023 — campaign hero" class="card-img" />
+        <p class="card-img-label">↑ Campaign hero, atlasveterans.ca</p>
+        <p class="card-desc">Led all English content for the Atlas Institute's Month of the Military Child 2023 campaign — writing the web copy, social posts, email copy, and video script from a single brief. The campaign's central metaphor, the dandelion, threaded through every format.</p>
+        <div class="card-tags">
+          <span class="tag">Web Copy</span>
+          <span class="tag">Social Copy</span>
+          <span class="tag">Email Copy</span>
+          <span class="tag">Video Script</span>
+        </div>
+        <a class="card-link" href="https://atlasveterans.ca/news/month-of-the-military-child-2023/" target="_blank" rel="noopener">View Month of the Military Child campaign ↗<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+
+      <!-- Card 5: RCMP 150 -->
+      <div class="card">
+        <div class="card-label">Campaign web hub · April–May 2023</div>
+        <h3 class="card-title">RCMP 150th Anniversary — Dedicated campaign page</h3>
+        <div class="pull-quote">
+          <p>"We are excited to announce the launch of a video campaign honouring the RCMP's 150 years of dedicated service to keeping our country safe. To foster community empathy and raise awareness about the diverse experiences of RCMP Veterans and their Families, this series features short documentary profiles of current and former RCMP members sharing what it means to serve."</p>
+          <div class="attr">— Campaign launch section, RCMP 150 Web Hub, April 2023</div>
+        </div>
+        <p class="card-desc">Wrote a multi-section web hub for the RCMP's 150th anniversary alongside a documentary video series launch — structuring complex institutional content as approachable web copy with clear navigation and multiple calls-to-action.</p>
+        <div class="card-tags">
+          <span class="tag">Long-form Web Copy</span>
+          <span class="tag">Campaign Launch</span>
+          <span class="tag">Video Campaign Writing</span>
+          <span class="tag">CTA Writing</span>
+        </div>
+        <a class="card-link" href="https://atlasveterans.ca/news/rcmp150/" target="_blank" rel="noopener">View RCMP 150th Anniversary page ↗<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+
+      <!-- Card 6: Social — Lived Expertise -->
+      <div class="card">
+        <div class="card-label">Recruitment campaign · May 2023</div>
+        <h3 class="card-title">Lived expertise lead for Veterans — Multi-platform social posts</h3>
+        <p class="card-desc">A recruitment announcement adapted across LinkedIn, Facebook, and Twitter/X — each version written for its platform's audience expectations: credential-focused on LinkedIn, community-framed on Facebook, action-oriented and concise on Twitter/X.</p>
+        <div class="social-tabs">
+          <span class="stab stab-li">LinkedIn</span>
+          <span class="stab stab-fb">Facebook</span>
+          <span class="stab stab-tw">Twitter / X</span>
+        </div>
+        <div class="social-col">
+          <div class="social-hdr">
+            <div class="social-avatar">AI</div>
+            <div>
+              <div class="social-name">Atlas Institute for Veterans and Families</div>
+              <div class="social-sub">National Research Organization</div>
+            </div>
+          </div>
+          <div class="social-body">Are you a women-identifying Canadian Armed Forces or RCMP Veteran passionate about making a difference in the Veteran community? We have an exciting opportunity for you to utilize your lived expertise and contribute to meaningful projects at the Atlas Institute.<br><br>As the <strong>Lived Expertise Lead for Veterans</strong>, you will work closely with our research team to bring your firsthand knowledge to the forefront, conduct outreach with Veterans' organizations, and advocate for policies that address the unique needs of women Veterans and their Families.</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Social Copy</span>
+          <span class="tag">Platform Adaptation</span>
+          <span class="tag">Recruitment Communications</span>
+        </div>
+      </div>
+
+            <!-- Card 8: Press Release -->
+      <div class="card">
+        <div class="card-label">Media release · September 2023</div>
+        <h3 class="card-title">Writing for press and stakeholder audiences</h3>
+        <p class="card-desc">When Ukraine's First Lady, Olena Zelenska, visited the Atlas Institute to discuss international best practices in military mental health, I drafted the press release that announced the visit and the resulting memorandum of understanding. The release translated a high-stakes bilateral moment — attended by the Minister of Veterans Affairs — into clear language for both media and public audiences. <a href="https://atlasveterans.ca/news/ukrainian-delegation-visits-canadian-organization-specializing-in-posttraumatic-stress-and-mental-health-conditions-in-military-veterans-and-their-families/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Read the full release ↗<span class="sr-only"> (opens in a new tab)</span></a></p>
+        <div class="pull-quote">
+          <p>"Together, we are looking to explore opportunities to collaborate that will allow Lisova Polyana to support Veteran and Family mental health in Ukraine, informed by the work Atlas is doing."</p>
+          <div class="attr">— Fardous Hosseiny, President &amp; CEO, Atlas Institute — quoted in the press release, September 2023</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Media Relations</span>
+          <span class="tag">Government &amp; Stakeholder Communications</span>
+          <span class="tag">Editorial Coordination</span>
+        </div>
+      </div>
+
+    </div><!-- /cards-grid -->
+  </section><!-- /section:more-work -->
+
+  <!-- ── Contact ───────────────────────── -->
+  <section class="contact-block" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Get in touch</h2>
+    <p>Interested in working together on English content, campaign writing, or communications strategy? Reach out via email.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:phlinh.hoang@gmail.com">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        phlinh.hoang@gmail.com
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/phlinhhoang/" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn ↗<span class="sr-only"> (opens in a new tab)</span>
+      </a>
+
+      <span class="contact-link" style="cursor:default;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Ho Chi Minh City, Vietnam
+      </span>
+    </div>
+  </section><!-- /section:contact -->
+
+</div><!-- /page -->
+</main>
+
+</body>
+</html>
